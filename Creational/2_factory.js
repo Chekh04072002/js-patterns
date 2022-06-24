@@ -20,6 +20,7 @@ class PremiumMembership {
 }
 
 class MemberFactory {
+    static count = 0;
     static list ={
         simple: SimpleMembership,
         standard: StandartMembership,
@@ -29,6 +30,7 @@ class MemberFactory {
         const Membership = MemberFactory.list[type] || MemberFactory.list['simple'];
         const member = new Membership(name);
         member.type = type;
+        MemberFactory.count++;
         return member;
     }
 }
@@ -41,5 +43,6 @@ const members = [
     factory.create('Max', 'simple'),
     factory.create('Sveta', 'standard')
 ]
+console.log(MemberFactory.count)
 
 console.log(members);
