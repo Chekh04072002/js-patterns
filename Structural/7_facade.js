@@ -39,3 +39,4 @@ class ComplaintRegistry {
 
 const registry = new ComplaintRegistry();
 console.log(registry.register('Sasha', 'service', 'Ошибка в доступе'));
+
